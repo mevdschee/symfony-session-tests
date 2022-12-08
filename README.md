@@ -1,6 +1,6 @@
 # Symfony session handler test suite
 
-This repository contains a test suite for the Symfony session save handlers (to test locking support). Current handlers that can be tested are:
+This repository contains a test suite for the Symfony session save handlers (to test locking support). Current handlers that are tested are:
 
 - default: [NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php) - uses the "files" session module.
 - memcached: [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - stores data in Memcached.
