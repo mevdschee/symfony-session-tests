@@ -10,7 +10,7 @@ chdir(__DIR__);
 require "vendor/autoload.php";
 $handlers = ['default', 'pdo_mysql', 'memcached', 'redis'];
 $extensions = ['pdo_mysql', 'memcached', 'redis'];
-$parallel = 10;
+$parallel = 100;
 // execute single test
 if ($_SERVER['SERVER_PORT'] ?? 0) {
 
