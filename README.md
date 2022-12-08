@@ -16,6 +16,11 @@ Optional dependencies can be installed using:
 
     sudo apt install memcached php-memcached redis php-redis
 
+You can install the Symfony dependencies of this script using:
+
+    wget getcomposer.org/composer.phar
+    php composer.phar install
+
 You need PHP 7.4 or higher to run the code.
 
 ## Using the handlers
