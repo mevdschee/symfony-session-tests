@@ -3,7 +3,7 @@
 This repository contains a test suite for the Symfony session save handlers (to test locking support). Current handlers that are tested are:
 
 - default: [NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php) - uses the "files" session module.
-- memcached: [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - stores data in Memcached (fails: no locking).
+- memcached: [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - stores data in Memcache (fails: no locking).
 - redis: [RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php) - stores data in Redis (fails: no locking).
 
 ## Requirements
@@ -34,7 +34,7 @@ The code will execute in about 1 second and test 14 HTTP calls in 3 save handler
     memcached : OK
     redis     : OK
 
-The word "FAILED" appears on a failed test and "SKIPPED" is shown when the PHP module is not loaded for either Redis or Memcached.
+The word "FAILED" appears on a failed test and "SKIPPED" is shown when the PHP module is not loaded for either Redis or Memcache.
 
 ## Stress testing
 
