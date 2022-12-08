@@ -29,6 +29,10 @@ See: [Store Sessions in a Database](https://symfony.com/doc/current/session/data
 
 ## Running the tests
 
+You should prepare your MySQL database by running the SQL script:
+
+    cat create_mysql_symfony_session_test_db.sql | sudo mysql
+
 You can run the tests from the command line using:
 
     php run-tests.php
