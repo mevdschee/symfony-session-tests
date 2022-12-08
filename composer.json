@@ -16,7 +16,8 @@
     },
     "suggest": {
         "ext-memcached": "Needed for session storage in Memcache in class MemcachedSessionHandler",
-        "ext-redis": "Needed for session storage in Redis in class RedisSessionHandler"
+        "ext-redis": "Needed for session storage in Redis in class RedisSessionHandler",
+        "ext-pdo_mysql": "Needed for session storage in MySQL using PDO in class PdoSessionHandler"
     },
     "require": {
         "symfony/http-foundation": "*"
