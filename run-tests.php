@@ -1,5 +1,6 @@
 <?php
 
+use MintyPHP\LoggingSessionHandler;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler;
@@ -37,7 +38,7 @@ if ($_SERVER['SERVER_PORT'] ?? 0) {
     }
 
     include 'src/LoggingSessionHandler.php';
-    session_set_save_handler(new MintyPHP\LoggingSessionHandler($handler), true);
+    session_set_save_handler(new LoggingSessionHandler($handler), true);
     header('X-Session-Save-Path: ' . ini_get('session.save_path'));
 
     ob_start();
