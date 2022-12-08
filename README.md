@@ -3,6 +3,7 @@
 This repository contains a test suite for the Symfony session save handlers (to test locking support). Current handlers that are tested are:
 
 - default: [NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php) - uses the "files" session module.
+- pdo_mysql: [PdoSessionHandler](https://github.com/symfony/symfony/blob/6.3/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php) - stores data in MySQL using PDO.
 - memcached: [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - stores data in Memcache (fails: no locking).
 - redis: [RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php) - stores data in Redis (fails: no locking).
 
@@ -14,7 +15,7 @@ You can install the dependencies of this script using:
 
 Optional dependencies can be installed using:
 
-    sudo apt install memcached php-memcached redis php-redis
+    sudo apt install memcached php-memcached redis php-redis php-mysql
 
 You can install the Symfony dependencies of this script using:
 
@@ -40,6 +41,7 @@ You can run the tests from the command line using:
 The code will execute in about 1 second and test 14 HTTP calls in 3 save handlers. The following output would mean that the tests succeeded and locking is implemented correctly (which is not the case):
 
     default   : OK
+    pdo_mysql : OK
     memcached : OK
     redis     : OK
 

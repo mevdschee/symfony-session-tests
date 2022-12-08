@@ -8,8 +8,8 @@ use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
 
 chdir(__DIR__);
 require "vendor/autoload.php";
-$handlers = ['default', 'pdo', 'memcached', 'redis'];
-$extensions = ['pdo', 'memcached', 'redis'];
+$handlers = ['default', 'pdo_mysql', 'memcached', 'redis'];
+$extensions = ['pdo_mysql', 'memcached', 'redis'];
 $parallel = 10;
 // execute single test
 if ($_SERVER['SERVER_PORT'] ?? 0) {
@@ -30,7 +30,7 @@ if ($_SERVER['SERVER_PORT'] ?? 0) {
             $memcached->addServer('localhost', 11211);
             $handler = new MemcachedSessionHandler($memcached);
             break;
-        case 'pdo':
+        case 'pdo_mysql':
             $dsn = 'mysql:host=localhost;dbname=symfony_session_test_db;charset=UTF8';
             $options = ['db_username' => 'symfony_session_test_db', 'db_password' => 'symfony_session_test_db'];
             $handler = new PdoSessionHandler($dsn, $options);
