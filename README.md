@@ -10,7 +10,7 @@ This repository contains a test suite for the Symfony session save handlers (to 
 
 You can install the dependencies of this script using:
 
-    sudo apt install php-cli curl
+    sudo apt install php-cli php-curl
 
 Optional dependencies can be installed using:
 
