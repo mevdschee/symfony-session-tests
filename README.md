@@ -31,7 +31,7 @@ You can run the tests from the command line using:
 The code will execute in about 1 second and test 12 HTTP calls in 3 save handlers. The following output means that the tests succeeded:
 
     default   : OK
-    memcache  : OK
+    memcached : OK
     redis     : OK
 
 The word "FAILED" appears on a failed test and "SKIPPED" is shown when the PHP module is not loaded for either Redis or Memcache.
