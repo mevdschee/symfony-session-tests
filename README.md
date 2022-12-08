@@ -34,7 +34,7 @@ The code will execute in about 1 second and test 14 HTTP calls in 3 save handler
     memcached : OK
     redis     : OK
 
-The word "FAILED" appears on a failed test and "SKIPPED" is shown when the PHP module is not loaded for either Redis or Memcache.
+The word "FAILED" appears on a failed test and "SKIPPED" is shown when the PHP module is not loaded for either Redis or Memcached.
 
 ## Stress testing
 
