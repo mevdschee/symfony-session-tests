@@ -28,7 +28,7 @@ You can run the tests from the command line using:
 
     php run-tests.php
 
-The code will execute in about 1 second and test 14 HTTP calls in 3 save handlers. The following output means that the tests succeeded and locking is implemented correctly (which isn't the case):
+The code will execute in about 1 second and test 14 HTTP calls in 3 save handlers. The following output would mean that the tests succeeded and locking is implemented correctly (which is not the case):
 
     default   : OK
     memcached : OK
