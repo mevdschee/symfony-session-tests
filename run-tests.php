@@ -4,11 +4,12 @@ use MintyPHP\LoggingSessionHandler;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
 
 chdir(__DIR__);
 require "vendor/autoload.php";
-$handlers = ['default', 'memcached', 'redis'];
-$extensions = ['memcached', 'redis'];
+$handlers = ['default', 'pdo', 'memcached', 'redis'];
+$extensions = ['pdo', 'memcached', 'redis'];
 $parallel = 10;
 // execute single test
 if ($_SERVER['SERVER_PORT'] ?? 0) {
@@ -28,6 +29,11 @@ if ($_SERVER['SERVER_PORT'] ?? 0) {
             $memcached = new Memcached();;
             $memcached->addServer('localhost', 11211);
             $handler = new MemcachedSessionHandler($memcached);
+            break;
+        case 'pdo':
+            $dsn = 'mysql:host=localhost;dbname=symfony_session_test_db;charset=UTF8';
+            $options = ['db_username' => 'symfony_session_test_db', 'db_password' => 'symfony_session_test_db'];
+            $handler = new PdoSessionHandler($dsn, $options);
             break;
         case 'default':
             $savePath = ini_get('session.save_path');
