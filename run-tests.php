@@ -1,7 +1,12 @@
 <?php
+
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler;
+use Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler;
+
 chdir(__DIR__);
 require "vendor/autoload.php";
-$handlers = ['memcached', 'redis'];
+$handlers = ['default', 'memcached', 'redis'];
 $extensions = ['memcached', 'redis'];
 $parallel = 10;
 // execute single test
@@ -16,12 +21,16 @@ if ($_SERVER['SERVER_PORT'] ?? 0) {
         case 'redis':
             $redis = new Redis();
             $redis->connect('localhost', '6379');
-            $handler = new \Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler($redis);
+            $handler = new RedisSessionHandler($redis);
             break;
         case 'memcached':
             $memcached = new Memcached();;
             $memcached->addServer('localhost', 11211);
-            $handler = new \Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler($memcached);
+            $handler = new MemcachedSessionHandler($memcached);
+            break;
+        case 'default':
+            $savePath = ini_get('session.save_path');
+            $handler = new NativeFileSessionHandler($savePath);
             break;
         default:
             die('invalid handler name');
@@ -126,7 +135,6 @@ foreach ($handlers as $handlerName) {
                     list($sessionName, $sessionId) = explode('=', explode(';', $headers['Set-Cookie'])[0]);
                 }
                 // replace random session ids
-                $oldSessionId = '';
                 $replacements = [
                     $sessionId => '{{current_random_session_id}}',
                     $oldSessionId => '{{previous_random_session_id}}',

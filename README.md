@@ -1,6 +1,6 @@
 # Symfony session handler test suite
 
-This repository contains a set of PHP session save handlers that support locking. I also contains a test suite to prove that they do. Current handlers are:
+This repository contains a test suite for the Symfony session save handlers (that support locking). Current handlers that can be tested are:
 
 - [NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php) - a session handler that uses PHP's ini settings to configure the "files" session module.
 - [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - a session handler that stores it's session data in Memcache.
