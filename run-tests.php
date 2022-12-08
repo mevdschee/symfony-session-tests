@@ -22,7 +22,7 @@ if ($_SERVER['SERVER_PORT'] ?? 0) {
     switch ($handlerName) {
         case 'redis':
             $redis = new Redis();
-            $redis->connect('localhost', '6379');
+            $redis->connect('localhost', 6379);
             $handler = new RedisSessionHandler($redis);
             break;
         case 'memcached':
