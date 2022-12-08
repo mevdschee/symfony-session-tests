@@ -19,6 +19,6 @@
         "ext-redis": "Needed for session storage in Redis in class RedisSessionHandler"
     },
     "require": {
-        "symfony/http-foundation": "^6.2"
+        "symfony/http-foundation": "*"
     }
 }
