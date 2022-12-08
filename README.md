@@ -1,4 +1,4 @@
-# MintyPHP session save handlers
+# Symfony session handler test suite
 
 This repository contains a set of PHP session save handlers that support locking. I also contains a test suite to prove that they do. Current handlers are:
 
