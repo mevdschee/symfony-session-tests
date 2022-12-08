@@ -30,6 +30,7 @@ You can run the tests from the command line using:
 
 The code will execute in about 1 second and test 12 HTTP calls in 3 save handlers. The following output means that the tests succeeded:
 
+    default   : OK
     memcache  : OK
     redis     : OK
 
