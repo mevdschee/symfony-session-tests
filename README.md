@@ -3,8 +3,8 @@
 This repository contains a test suite for the Symfony session save handlers (to test locking support). Current handlers that are tested are:
 
 - default: [NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php) - uses the "files" session module.
-- memcached: [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - stores data in Memcached.
-- redis: [RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php) - stores data in Redis.
+- memcached: [MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php) - stores data in Memcached (fails: no locking).
+- redis: [RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php) - stores data in Redis (fails: no locking).
 
 ## Requirements
 
