@@ -28,10 +28,6 @@ You can install the Symfony dependencies of this script using:
 
 You need PHP 7.4 or higher to run the code.
 
-## Using the handlers
-
-See: [Store Sessions in a Database](https://symfony.com/doc/current/session/database.html)
-
 ## Running the tests
 
 You should prepare your MySQL database by running the SQL script:
@@ -59,14 +55,11 @@ Use this for 100 runs:
 
 As shown, you may use the argument "silent" to suppress output on successful or skipped tests.
 
-## Links to (other) locking handlers
+## Links
 
-Below you find a few implementations of locking Session handlers:
+Below you find some more interesting information about Symony, Sessions and locking:
 
-- https://github.com/mintyphp/session-handlers (recommended)
-- https://github.com/stechstudio/laravel-raw-sessions (Laravel "files")
-- https://github.com/1ma/RedisSessionHandler (Redis)
-- https://github.com/colinmollenhour/php-redis-session-abstract (Redis)
-- https://github.com/kronostechnologies/redis-session-handler (Redis)
+- https://github.com/mintyphp/session-handlers (Locking handler implementations)
+- https://symfony.com/doc/current/session/database.html (Symfony Session documentation)
 
 Enjoy!
