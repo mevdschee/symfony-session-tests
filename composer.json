@@ -1,6 +1,6 @@
 {
-    "name": "mintyphp/session-handlers",
-    "description": "Better session handlers",
+    "name": "nevdschee/symfony-session-tests",
+    "description": "A test suite for the Symfony session save handlers (to test locking support)",
     "license": "MIT",
     "authors": [
         {
