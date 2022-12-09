@@ -63,9 +63,10 @@ As shown, you may use the argument "silent" to suppress output on successful or 
 
 Below you find a few other implementations of locking Session handlers:
 
-- https://github.com/mintyphp/session-handlers
-- https://github.com/1ma/RedisSessionHandler
-- https://github.com/colinmollenhour/php-redis-session-abstract
-- https://github.com/kronostechnologies/redis-session-handler
+- https://github.com/mintyphp/session-handlers (recommended)
+- https://github.com/stechstudio/laravel-raw-sessions (Laravel "files")
+- https://github.com/1ma/RedisSessionHandler (Redis)
+- https://github.com/colinmollenhour/php-redis-session-abstract (Redis)
+- https://github.com/kronostechnologies/redis-session-handler (Redis)
 
 Enjoy!
