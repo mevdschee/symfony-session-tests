@@ -5,7 +5,7 @@ This repository contains a test suite for the Symfony session save handlers (to 
 - **standard**
   - **default** ([NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php))  
     Uses the "files" session module.
-- **strict** (Protects against session fixation attacks)
+- **strict** ([docs](https://www.php.net/manual/en/session.configuration.php#ini.session.use-strict-mode) / [rfc](https://wiki.php.net/rfc/strict_sessions))
   - **pdo_mysql** ([PdoSessionHandler](https://github.com/symfony/symfony/blob/6.3/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php))  
     Stores data in MySQL using PDO.
   - **memcached** ([MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php))  
