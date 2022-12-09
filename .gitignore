@@ -1,4 +1,4 @@
 composer.phar
 /tmp/
 /vendor/
-/tests/*.out
+*.out
