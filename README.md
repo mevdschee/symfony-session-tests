@@ -41,9 +41,9 @@ You can run the tests from the command line using:
 The code will execute in about 1 second per handler and test 104 HTTP calls for each handler. The following output would mean that the tests succeeded and locking is implemented correctly (which is not the case):
 
     standard - default   : OK
-    standard - pdo_mysql : OK
-    standard - memcached : OK
-    standard - redis     : OK
+    strict   - pdo_mysql : OK
+    strict   - memcached : OK
+    strict   - redis     : OK
 
 The word "FAILED" appears on a failed test and "SKIPPED" is shown when the PHP module is not loaded for either Redis or Memcache.
 

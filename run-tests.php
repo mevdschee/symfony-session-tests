@@ -11,6 +11,8 @@ require "vendor/autoload.php";
 $handlers = [
     'standard' => [
         'default' => [],
+    ],
+    'strict' => [
         'pdo_mysql' => ['pdo_mysql'],
         'memcached' => ['memcached'],
         'redis' => ['redis'],
