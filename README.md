@@ -61,6 +61,11 @@ As shown, you may use the argument "silent" to suppress output on successful or 
 
 ## Links to (other) locking handlers
 
+Below you find a few other implementations of locking Session handlers:
+
+- https://github.com/mintyphp/session-handlers
 - https://github.com/1ma/RedisSessionHandler
 - https://github.com/colinmollenhour/php-redis-session-abstract
 - https://github.com/kronostechnologies/redis-session-handler
+
+Enjoy!
