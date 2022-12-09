@@ -58,3 +58,9 @@ Use this for 100 runs:
     for i in `seq 1 100`; do php run-tests.php silent; done
 
 As shown, you may use the argument "silent" to suppress output on successful or skipped tests.
+
+## Links to (other) locking handlers
+
+- https://github.com/1ma/RedisSessionHandler
+- https://github.com/colinmollenhour/php-redis-session-abstract
+- https://github.com/kronostechnologies/redis-session-handler
