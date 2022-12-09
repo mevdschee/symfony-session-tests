@@ -61,7 +61,7 @@ As shown, you may use the argument "silent" to suppress output on successful or 
 
 ## Links to (other) locking handlers
 
-Below you find a few other implementations of locking Session handlers:
+Below you find a few implementations of locking Session handlers:
 
 - https://github.com/mintyphp/session-handlers (recommended)
 - https://github.com/stechstudio/laravel-raw-sessions (Laravel "files")
