@@ -8,8 +8,13 @@ use Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler;
 
 chdir(__DIR__);
 require "vendor/autoload.php";
-$handlers = ['default', 'pdo_mysql', 'memcached', 'redis'];
-$extensions = ['pdo_mysql', 'memcached', 'redis'];
+$handlers = [
+    'default' => [],
+    'pdo_mysql' => ['pdo_mysql'],
+    'memcached' => ['memcached'],
+    'redis' => ['redis']
+];
+$extensions = ['', 'memcached', 'redis'];
 $parallel = 100;
 // execute single test
 if ($_SERVER['SERVER_PORT'] ?? 0) {
@@ -65,9 +70,15 @@ if ($_SERVER['SERVER_PORT'] ?? 0) {
     die();
 }
 // start test runner
-foreach ($handlers as $handlerName) {
+foreach ($handlers as $handlerName => $extensions) {
     // check extension
-    if (in_array($handlerName, $extensions) && !extension_loaded($handlerName)) {
+    $extensionsLoaded = true;
+    foreach ($extensions as $extension) {
+        if (!extension_loaded($extension)) {
+            $extensionsLoaded = false;
+        }
+    }
+    if (!$extensionsLoaded) {
         if (($argv[1] ?? '') != 'silent') {
             echo sprintf("%-10s: SKIPPED\n", $handlerName);
         }
