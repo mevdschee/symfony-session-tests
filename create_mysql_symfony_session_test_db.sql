@@ -8,6 +8,7 @@ CREATE USER 'symfony_session_test_db'@'localhost' IDENTIFIED BY 'symfony_session
 GRANT ALL PRIVILEGES ON `symfony_session_test_db`.* TO 'symfony_session_test_db'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 --
+USE `symfony_session_test_db`;
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE `sessions` (
   `sess_id` varbinary(128) NOT NULL,
