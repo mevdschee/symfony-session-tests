@@ -13,7 +13,7 @@ This repository contains a test suite for the Symfony session save handlers (to 
   - **redis** ([RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php))  
     Stores data in Redis (fails: no locking).
 
-Note that the standard mode testable handlers are strict as well, but can't be tested as strict handlers.
+Note that the standard mode testable handlers are implement strict mode as well, but can't be tested as strict handlers.
 
 ## Requirements
 
