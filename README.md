@@ -2,14 +2,16 @@
 
 This repository contains a test suite for the Symfony session save handlers (to test locking support). Current handlers that are tested are:
 
-- **default** ([NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php))  
-  Uses the "files" session module.
-- **pdo_mysql** ([PdoSessionHandler](https://github.com/symfony/symfony/blob/6.3/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php))  
-  Stores data in MySQL using PDO.
-- **memcached** ([MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php))  
-  Stores data in Memcache (fails: no locking).
-- **redis** ([RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php))  
-  Stores data in Redis (fails: no locking).
+- **standard**
+  - **default** ([NativeFileSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/NativeFileSessionHandler.php))  
+    Uses the "files" session module.
+- **strict** (Protects against session fixation attacks)
+  - **pdo_mysql** ([PdoSessionHandler](https://github.com/symfony/symfony/blob/6.3/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php))  
+    Stores data in MySQL using PDO.
+  - **memcached** ([MemcachedSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/MemcachedSessionHandler.php))  
+    Stores data in Memcache (fails: no locking).
+  - **redis** ([RedisSessionHandler](https://github.com/symfony/symfony/blob/6.2/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/RedisSessionHandler.php))  
+    Stores data in Redis (fails: no locking).
 
 ## Requirements
 
