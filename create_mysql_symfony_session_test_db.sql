@@ -9,6 +9,7 @@ GRANT ALL PRIVILEGES ON `symfony_session_test_db`.* TO 'symfony_session_test_db'
 FLUSH PRIVILEGES;
 --
 USE `symfony_session_test_db`;
+---
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE `sessions` (
   `sess_id` varbinary(128) NOT NULL,
