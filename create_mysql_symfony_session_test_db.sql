@@ -1,3 +1,4 @@
+--
 -- cat create_mysql_symfony_session_test_db.sql | sudo mysql
 --
 DROP USER IF EXISTS 'symfony_session_test_db'@'localhost';
